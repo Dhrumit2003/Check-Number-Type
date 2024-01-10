@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Check Number Type</title>
+  <style>
+    /* Optional: Some basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #number-input {
+      width: 200px;
+      padding: 8px;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    #check-btn {
+      padding: 8px 16px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="number-input" placeholder="Enter a number...">
+  <button id="check-btn">Check Type</button>
+  <div id="result"></div>
+
+  <script>
+    document.getElementById('check-btn').addEventListener('click', function() {
+      const numberInput = document.getElementById('number-input').value;
+      const result = document.getElementById('result');
+      
+      // Parse the input to a float
+      const number = parseFloat(numberInput);
+      
+      if (Number.isInteger(number)) {
+        result.textContent = `${number} is an Integer.`;
+      } else {
+        result.textContent = `${number} is a Float.`;
+      }
+    });
+  </script>
+</body>
+</html>
